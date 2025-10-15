@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pratheeksha - Interactive Resume</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Pratheeksha</h1>
+            <p class="tagline">Aspiring Web Developer | Unique Portfolio Site</p>
+        </div>
+        <nav>
+            <a href="index.html" class="active">Resume (Timeline)</a>
+            <a href="bio.html">Bio-data</a>
+            <button id="theme-toggle">☀️/🌙</button> 
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="summary">
+            <h2>Professional Summary</h2>
+            <p>Detail-oriented student with a strong foundation in front-end development. Eager to apply skills in responsive design and interactivity to create engaging user interfaces. Dedicated to continuous learning and technical excellence.</p>
+        </section>
+
+        <section class="timeline-section">
+            <h2>Education & Experience Timeline</h2>
+            <div class="timeline">
+                
+                <div class="timeline-item">
+                    <div class="timeline-content right">
+                        <h3>B.E in Computer Science - Visweshwarayya Technological University Belagavi</h3>
+                        <p class="date">2023 - 2027</p>
+                        <p>Focus on Data Structures, Algorithms, and Web Development. Current GPA: 8.0</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content left">
+                        <h3>Web Development Internship - Aura Labs</h3>
+                        <p class="date">Summer 2025 (3 Months)</p>
+                        <ul>
+                            <li>Contributed to 5+ module designs using HTML/CSS.</li>
+                            <li>Implemented dynamic content fetching via jQuery AJAX calls.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content right">
+                        <h3></h3>
+                        <p class="date">2021 - 2023</p>
+                        <p>Specialization in Computer Science stream. Achieved 95% overall score.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="skills-section">
+            <h2>Technical Skills</h2>
+            <div class="skill-bar-container">
+                <div class="skill-bar-item" data-percent="95">
+                    <p>HTML5 & CSS3</p>
+                    <div class="bar"><span class="bar-fill"></span></div>
+                </div>
+                <div class="skill-bar-item" data-percent="80">
+                    <p>JavaScript/jQuery</p>
+                    <div class="bar"><span class="bar-fill"></span></div>
+                </div>
+                <div class="skill-bar-item" data-percent="70">
+                    <p>Python/C++</p>
+                    <div class="bar"><span class="bar-fill"></span></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer><p>&copy; 2025 Pratheeksha.</p></footer>
+    <script src="script.js"></script>
+</body>
+</html>

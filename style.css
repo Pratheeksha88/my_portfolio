@@ -1,0 +1,257 @@
+/* Custom Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap'); /* Added 300, 500 weights */
+
+/* --- 1. Root Variables & Dark Mode Setup --- */
+:root {
+    --primary-color: #00A6FB; /* Sky Blue Accent */
+    --background-color: #f0f2f5;
+    --text-color: #333333;
+    --card-background: #ffffff;
+    --timeline-line: #b0b0b0;
+    --border-color: #e0e0e0;
+    --shadow-color: rgba(0, 0, 0, 0.08); /* Subtle shadow */
+}
+
+/* Dark Mode Overrides */
+body.dark-mode {
+    --background-color: #1a1a2e;
+    --text-color: #e0e0e0;
+    --card-background: #2c2c44;
+    --timeline-line: #505070;
+    --primary-color: #90e0ef; /* Lighter accent for contrast */
+    --border-color: #3a3a50;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+/* --- 2. Global & Header Styling (KEEP AS IS, just ensure consistency) --- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container { max-width: 1000px; margin: 30px auto; padding: 0 20px; }
+
+header {
+    background-color: var(--primary-color);
+    color: var(--background-color); 
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 10px var(--shadow-color); /* Use shadow variable */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+nav a { color: var(--background-color); text-decoration: none; padding: 10px 15px; border-radius: 5px; transition: background-color 0.3s; }
+nav a:hover, nav a.active { background-color: rgba(0, 0, 0, 0.1); }
+#theme-toggle { background: none; color: var(--background-color); border: 1px solid var(--background-color); padding: 8px 15px; cursor: pointer; border-radius: 5px; transition: background-color 0.3s; }
+#theme-toggle:hover { background-color: rgba(0, 0, 0, 0.1); }
+
+h1 { font-weight: 700; font-size: 2.5em; } /* Make main title more prominent */
+h2 { 
+    color: var(--primary-color); 
+    border-bottom: 2px solid var(--timeline-line); 
+    padding-bottom: 5px; 
+    margin-top: 30px; 
+    margin-bottom: 25px; 
+    font-size: 1.8em; /* Slightly larger headings */
+    font-weight: 500;
+}
+h3 { font-weight: 500; color: var(--text-color); margin-bottom: 10px; } /* For card titles */
+
+
+/* --- 3. Vertical Timeline (KEEP AS IS) --- */
+.timeline { position: relative; padding: 20px 0; }
+.timeline::after { content: ''; position: absolute; width: 3px; background-color: var(--timeline-line); top: 0; bottom: 0; left: 50%; margin-left: -1.5px; }
+.timeline-item { padding: 10px 40px; position: relative; width: 50%; }
+.timeline-item:nth-child(even) { left: 50%; }
+.timeline-content {
+    padding: 20px;
+    background-color: var(--card-background);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+.timeline-item::after {
+    content: ''; position: absolute; width: 20px; height: 20px; right: -10px; background-color: var(--primary-color);
+    border: 3px solid var(--background-color); top: 25px; border-radius: 50%; z-index: 1;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+.timeline-item:nth-child(even)::after { left: -10px; right: auto; }
+
+
+/* --- 4. Skill Bar Styling (KEEP AS IS) --- */
+.bar { background-color: var(--timeline-line); height: 12px; border-radius: 6px; overflow: hidden; margin-top: 5px; }
+.bar-fill { display: block; height: 100%; width: 0%; background-color: var(--primary-color); }
+.skill-bar-item p { margin-bottom: 5px; font-weight: 500; }
+
+/* --- 5. Bio-data Page Specific Styling (NEW/UPDATED) --- */
+.bio-data-main {
+    padding-top: 20px;
+}
+
+.bio-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column by default */
+    gap: 25px; /* Spacing between cards */
+    margin-top: 20px;
+}
+
+@media (min-width: 768px) {
+    .bio-grid {
+        grid-template-columns: 1fr 1fr; /* Two columns for larger screens */
+    }
+    .profile-card {
+        grid-column: 1 / -1; /* Make profile card span full width */
+    }
+    .declaration-card {
+        grid-column: 1 / -1; /* Make declaration card span full width */
+    }
+}
+
+.bio-card {
+    background-color: var(--card-background);
+    padding: 25px;
+    border-radius: 12px; /* More rounded corners */
+    box-shadow: 0 6px 15px var(--shadow-color); /* Deeper shadow for cards */
+    border: 1px solid var(--border-color); /* Subtle border */
+    transition: all 0.3s ease; /* Smooth transitions for hover effects */
+}
+
+.bio-card:hover {
+    transform: translateY(-5px); /* Lift card on hover */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+/* Profile Card Specifics */
+.profile-card {
+    text-align: center;
+    padding: 30px;
+}
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Circular image */
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 4px solid var(--primary-color); /* Border around image */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+.profile-card h3 {
+    font-size: 2em;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: var(--text-color);
+}
+.profile-card .tagline {
+    font-size: 1.1em;
+    color: var(--timeline-line); /* Lighter text for tagline */
+}
+
+/* Lists in Cards */
+.detail-list, .hobbies-list {
+    list-style: none; /* Remove default bullets */
+    padding: 0;
+    margin-top: 20px;
+}
+.detail-list li, .hobbies-list li {
+    padding: 10px 0;
+    border-bottom: 1px dashed var(--border-color); /* Dashed separator */
+    display: flex;
+    align-items: center;
+}
+.detail-list li:last-child, .hobbies-list li:last-child {
+    border-bottom: none; /* No border on the last item */
+}
+.detail-list li strong {
+    min-width: 140px; /* Align content nicely */
+    font-weight: 500;
+    color: var(--primary-color);
+}
+.hobbies-list li {
+    font-weight: 400;
+}
+
+/* Icons */
+.icon-header {
+    margin-right: 10px;
+    color: var(--primary-color);
+    font-size: 1.4em;
+}
+.icon-list {
+    margin-right: 12px;
+    color: var(--primary-color);
+    font-size: 1.1em;
+}
+
+/* Declaration Card */
+.declaration-card {
+    text-align: justify;
+}
+.declaration-text {
+    margin-top: 15px;
+    margin-bottom: 25px;
+    font-style: italic;
+    color: var(--text-color);
+    line-height: 1.8;
+}
+.signature-block {
+    text-align: right;
+    margin-top: 20px;
+    font-weight: 500;
+}
+.signature-block .date {
+    font-size: 0.9em;
+    color: var(--timeline-line);
+}
+
+/* --- 6. Responsiveness (UPDATED) --- */
+@media screen and (max-width: 768px) {
+    .timeline::after { left: 20px; }
+    .timeline-item { width: 100%; padding-left: 60px; }
+    .timeline-item:nth-child(even) { left: 0; }
+    .timeline-item::after, .timeline-item:nth-child(even)::after {
+        left: 14px; right: auto;
+    }
+    header { flex-direction: column; }
+    nav { margin-top: 15px; }
+
+    /* Bio-data Mobile Adjustments */
+    .bio-grid {
+        grid-template-columns: 1fr; /* Stack cards vertically on small screens */
+    }
+    .profile-pic {
+        width: 100px;
+        height: 100px;
+    }
+    .profile-card h3 {
+        font-size: 1.5em;
+    }
+    .profile-card .tagline {
+        font-size: 0.9em;
+    }
+    .details-table th, .details-table td {
+        display: block; /* Stack table headers/data on mobile if you still use table*/
+        text-align: left;
+    }
+    .details-table th { border-bottom: none; }
+    .details-table tr:not(:last-child) { border-bottom: 1px solid var(--border-color); }
+}
+
+/* Footer Styling (ensure it looks good with new styles) */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 0.9em;
+    box-shadow: 0 -2px 8px var(--shadow-color);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
