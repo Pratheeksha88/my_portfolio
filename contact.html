@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Get in Touch</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Contact Me</h1>
+            <p class="tagline">Let's connect and discuss projects or opportunities.</p>
+        </div>
+       <nav>
+    <a href="index.html" class="[active or blank]">Welcome</a>
+    <a href="resume.html" class="[active or blank]">Resume (Timeline)</a>
+    <a href="bio.html" class="[active or blank]">Bio-data</a>
+    <a href="contact.html" class="[active or blank]">Contact</a>
+    <button id="theme-toggle">☀️/🌙</button> 
+</nav>
+
+    
+    </header>
+
+    <main class="container contact-main">
+        <div class="bio-grid contact-grid">
+            <div class="bio-card form-card">
+                <h2>Send a Message</h2>
+                <form action="mailto:your.email@example.com" method="post" enctype="text/plain">
+                    <div class="form-group">
+                        <label for="name">Your Name:</label>
+                        <input type="text" id="name" name="sender_name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your email:</label>
+                        <input type="email" id="email" name="sender_email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject:</label>
+                        <input type="text" id="subject" name="message_subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message_body" rows="6" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-button"><i class="fas fa-envelope"></i> Send Message</button>
+                </form>
+            </div>
+
+            <div class="bio-card details-card">
+                <h2>Direct Details</h2>
+                <ul class="contact-list">
+                    <li><i class="fas fa-map-marker-alt icon-list"></i> Mangalore,Karnataka</li>
+                    <li><i class="fas fa-envelope icon-list"></i>  pratheekshapandije@gmail.com</li>
+                    <li><i class="fas fa-phone icon-list"></i> +91 8123289381</li>
+                    <li>
+                      <i class="fab fa-linkedin icon-list"></i> linked in <a href="https://www.linkedin.com/in/pratheeksha-k-3a053838a" target="_blank">My Profile</a>
+                   </li>
+    
+        
+
+            
+                </ul>
+
+                <h3 class="mt-30">Connect</h3>
+                <div class="social-icons">
+                    <a href="https://github.com/Pratheeksha88" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/pratheeksha-k-3a053838a" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer><p>&copy; 2025 Pratheeksha. All rights reserved.</p></footer>
+    <script src="script.js"></script>
+</body>
+</html>
